@@ -23,6 +23,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:counterEnabled = "true"
         app:counterMaxLength="10"
+        app:errorEnabled="true"
         >
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/textFirstName"
@@ -48,9 +49,10 @@
         app:layout_constraintTop_toBottomOf="@+id/textInputLayoutFirstName"
         app:counterEnabled = "true"
         app:counterMaxLength="20">
+        app:errorEnabled="true"
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/last_name"
+            android:id="@+id/lastName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@null"
@@ -58,16 +60,27 @@
             android:textCursorDrawable="@drawable/cursor" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:layout_marginTop="8dp"
+        android:text="date of birth"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutLastName" />
+
     <DatePicker
         android:id="@+id/datePicker"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="60dp"
+        android:layout_marginTop="8dp"
         android:layout_marginStart="60dp"
         android:calendarViewShown="false"
         android:datePickerMode="spinner"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayoutLastName" />
+        app:layout_constraintTop_toBottomOf="@+id/text" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayoutPass"
@@ -85,6 +98,7 @@
         app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/pass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@null"
@@ -124,7 +138,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:background="@null"
         android:onClick="Registration"
         android:text="registration"
         app:layout_constraintStart_toStartOf="parent"
